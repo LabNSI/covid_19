@@ -18,11 +18,13 @@ Notre objectif est développer une application Python pour :
 * les filtrer par pays,
 * Tracer un graphic de l'évolution de la propagation
 
-image::images/propagation.png[align="center"]
+![](propagation.png)
 
 ## Téléchargement du fichier csv
 
 * `covid_19v1.py`
+
+![Exploitation avec Excel](excel.PNG)
 
 ## Lecture du fichier csv
 
