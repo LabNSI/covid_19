@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
     if download_file(url,file):
         print(f'Téléchargement du fichier {file} terminé avec succès')
-        fields, coutries = read_CSV(file)
+        coutries = read_CSV(file)
         print("liste des pays et régions recencés")
         print("----------------------------------")
         for row in coutries:
