@@ -14,7 +14,6 @@ Accès aux données brutes sur leur espace github : https://github.com/CSSEGISan
 Notre objectif est développer une application Python pour :
 
 * récupérer les données brutes de la propagation du virus au format **csv**,
-* les transformer au format **json**
 * les filtrer par pays,
 * Tracer un graphic de l'évolution de la propagation
 
