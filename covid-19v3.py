@@ -1,6 +1,6 @@
 ############################################
 #
-# Read a csv file
+# Filter by country
 # Author : MS
 # Date : 16/03/2020
 #
@@ -10,6 +10,7 @@
 
 import urllib.request as urllib2
 import csv
+
 
 def download_file(url, file_name):
     '''
@@ -29,13 +30,14 @@ def download_file(url, file_name):
         # Something is wrong : return false
         return ___
 
+
 def read_CSV(file):
     '''
     Read a csv file and return :
     - fields name as string in a list
     - datas dictionary  by countries in a list
     '''
-    # datas is an empty list 
+    # datas is an empty list
     datas = []
     # open the file passed in argument as csvfile
     # https://docs.python.org/3/library/csv.html#csv.reader
@@ -49,34 +51,32 @@ def read_CSV(file):
         # return the list of dictionaries by countries
         return datas
 
-        
+def data_for_country(data, state = "", country = ""):
+    # for each country in data
+    for pays in ___:
+        # if 'Province\State' key match with state given in argument
+        # and if 'Country/Region' key match with country given in argument
+        if pays[___] == ___ and pays[___] == ___:
+            return pays
+
+
 # here the main code
 if __name__ == '__main__':
 
-    # File name of datas
-    file = "time_series_19-covid-Confirmed.csv"
-    # where datas are located
-    url = "https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"
+  # File name of datas
+  file = "time_series_19-covid-Confirmed.csv"
+  # where datas are located
+  url = "https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"
 
-    if download_file(url,file):
-        print(f'Téléchargement du fichier {file} terminé avec succès')
-        coutries = read_CSV(file)
-        print("liste des pays et régions recencés")
-        print("----------------------------------")
-        for row in coutries:
-            print(row['Province/State'], row['Country/Region'])
-    else:
-        print(f'Téléchargement du fichier {file} impossible')
+  if download_file(url,file):
+      print(f'Téléchargement du fichier {file} terminé avec succès')
+      countries = read_CSV(file)
+      print("liste des pays et régions recencés")
+      print("----------------------------------")
+      # for row in coutries:
+      #    print(row['Province/State'], row['Country/Region'])
+      france = data_for_country(countries, 'France', 'France')
+      print(france)
 
-    
-    
-
-
-
-
-    
-
-
-
-
-
+  else:
+      print(f'Téléchargement du fichier {file} impossible')

@@ -21,7 +21,7 @@ def download_file(url, file_name):
         # https://docs.python.org/3/library/functions.html#open
         with open(___, '___') as output:
             # write in output the file read
-            output.(file.___())
+            output.___(file.___())
         # OK : return true
         return ___
     except:
