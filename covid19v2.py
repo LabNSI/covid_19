@@ -9,26 +9,10 @@
 ###########################################
 
 import urllib.request as urllib2
-import covid-19v1
+from covid19v1 import *
 import csv
 
-def download_file(url, file_name):
-    '''
-    Download a file from url and copy it localy with file_name as name
-    '''
-    try:
-        # open url passed in argument
-        file = urllib2.urlopen(___)
-        # open file for writing in binary mode
-        # https://docs.python.org/3/library/functions.html#open
-        with open(___, '___') as output:
-            # write in output the file read
-            output.___(file.___())
-        # OK : return true
-        return ___
-    except:
-        # Something is wrong : return false
-        return ___
+
 
 def read_CSV(file):
     '''
