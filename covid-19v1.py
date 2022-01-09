@@ -3,6 +3,7 @@
 # Download a file
 # Author : MS
 # Date : 16/03/2020
+# update : 09/01/2022
 #
 # Replace the "___" by appropriate code
 #
@@ -21,6 +22,7 @@ def download_file(url, file_name):
         # https://docs.python.org/3/library/functions.html#open
         with open(___, '___') as output:
             # write in output the file read
+            # use write an read functions
             output.___(file.___())
         # OK : return true
         return ___
