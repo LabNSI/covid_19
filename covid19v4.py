@@ -97,9 +97,6 @@ if __name__ == '__main__':
         # Save the figure as an image
         plt.___('covid19-Confimed.png')
         
-        # Save the figure as an image
-        plt.___('covid19-Confimed.png')
-        
         # Show graph
         plt.___()
         
