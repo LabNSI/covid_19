@@ -93,6 +93,10 @@ if __name__ == '__main__':
 
         # Add legend to graph
         plt.___()
+
+        # Save the figure as an image
+        plt.___('covid19-Confimed.png')
+        
         # Show graph
         plt.___()
         # Save the figure as an image
