@@ -39,7 +39,7 @@ def read_CSV(file):
 if __name__ == '__main__':
 
     # File name of datas
-    file = "time_series_19-covid-Confirmed.csv"
+    file = "time_series_covid19_confirmed_global.csv"
     # where datas are located
     url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
 
