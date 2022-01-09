@@ -9,6 +9,7 @@
 ###########################################
 
 import urllib.request as urllib2
+import covid-19v1
 import csv
 
 def download_file(url, file_name):
