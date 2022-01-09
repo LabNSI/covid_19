@@ -3,6 +3,7 @@
 # Trace graphs
 # Author : MS
 # Date : 16/03/2020
+# Update : 09/01/2022
 #
 # Replace the "___" by appropriate code
 #
@@ -11,52 +12,10 @@
 import urllib.request as urllib2
 import csv
 import matplotlib.pyplot as plt
+from covid19v1 import *
+from covid19v2 import *
+from covid19v3 import *
 
-def download_file(url, file_name):
-    '''
-    Download a file from url and copy it localy with file_name as name
-    '''
-    try:
-        # open url get in argument
-        file = urllib2.urlopen(url)
-        # open file for writing in binary mode
-        # https://docs.python.org/3/library/functions.html#open
-        with open(file_name, 'wb') as output:
-            # write in output the file read
-            output.write(file.read())
-        # OK : return true
-        return True
-    except:
-        # Somthing is wrong : return false
-        return False
-
-def read_CSV(file):
-    '''
-    Read a csv file and return :
-    - fields name as string in a list
-    - datas dictionary  by countries in a list
-    '''
-    # datas is an empty list 
-    datas = []
-    # open the file passed in argument as csvfile
-    # https://docs.python.org/3/library/csv.html#csv.reader
-    with open(file) as csvfile:
-        # Create a dictionnary with all datas
-        reader = csv.DictReader(csvfile)
-        # each row in reader is a dictionary by country
-        for row in reader:
-            # add row in datas list
-            datas.append(row)
-        # return the list of dictionaries by countries
-        return datas
-
-def data_for_country(data, state = "", country = ""):
-    # for each country in data
-    for pays in data:
-        # if 'Province\State' key match with state given in argument
-        # and if 'Country/Region' key match with country given in argument
-        if pays['Province/State'] == state and pays['Country/Region'] == country:
-            return pays
 
 def trace_data_for_country(country):
     '''
@@ -67,17 +26,22 @@ def trace_data_for_country(country):
     # y is an empty list
     y = ___
     # browse through the country dictionary to get datas.
-    # - Keys contain datas for x axis (dates)
+    # - Keys contain dates
     # - Values contain datas for y axis (number of daily cases)
-    #for key, value in country.___():
-    for key, value in country.items():
+    # x axis contains the number of days since the beginning of pandemic
+    day = 0
+
+    #for key, value in the country dictionnary
+    for key, value in ___:
         # Filter inappropriate keys
         if key != 'Province/State' and key !='___' and key != '___' and key != '___':
-            # Add key to the x list
+            # Add day number to the x list
             x.___(___)
+            # Prepare for the next day
+            day = ___
             # add value to the y list.
-            # value must be an integer
-            y.___(int(___))
+            # value must be a number
+            y.___(float(___))
     # return a tuple of lists x,y
     return x,y
 
@@ -88,17 +52,14 @@ if __name__ == '__main__':
     # File name of datas
     file = "time_series_19-covid-Confirmed.csv"
     # where datas are located
-    url = "https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"
+    url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
 
     if download_file(url,file):
         print(f'Téléchargement du fichier {file} terminé avec succès')
         countries = read_CSV(file)
-        print("liste des pays et régions recencés")
-        print("----------------------------------")
-        # for row in coutries:
-        #    print(row['Province/State'], row['Country/Region'])
+        
         chine = data_for_country(countries, 'Hubei', 'China')
-        france = data_for_country(countries, 'France', 'France')
+        france = data_for_country(countries, '', 'France')
         italie = data_for_country(countries, '', 'Italy')
         
         print(chine)
@@ -108,8 +69,6 @@ if __name__ == '__main__':
         # Figure dimensions
         plt.figure(figsize=(10, 7))
 
-        # Rotate ticks and labels of the x-axis
-        plt.xticks(rotation=90)
 
         # Plot datas for China
         x , y = trace_data_for_country(chine)
@@ -123,15 +82,21 @@ if __name__ == '__main__':
         ___
         ___
 
-        # Add title to graph : "Infectés"
+        # Add title to graph : "Infectés COVID-19 depuis le 22/01/2020"
+        ___
+
+        # Add label on x axis : 'Nombre de jours'
+        ___
+
+        # Add label on y axis : 'Nombre de contaminés'
         ___
 
         # Add legend to graph
         plt.___()
         # Show graph
         plt.___()
-        # Save the figure as '19-covid-Confimed.png'
-        plt.___('9-covid-Confimed.png')
+        # Save the figure as an image
+        plt.___('covid19-Confimed.png')
         # Close graph
         plt.___()
         
