@@ -4,9 +4,9 @@ A l’heure des "fake news", ces fausses informations qui se répandent rapideme
 
 Les chercheurs de l’université Johns Hopkins ont dans ce but produit une carte qui permet de suivre et de visualiser les rapports sur l’épidémie en utilisant les données des Centres américains et chinois de contrôle et de prévention des maladies, de l’Organisation mondiale de la santé et d’autres sources. Au fur et à mesure de l’arrivée des rapports, la carte est actualisée avec le nombre total de cas confirmés, ainsi que ceux des décès et des guérisons. Chaque point rouge représente un foyer d’apparition de la maladie, dont la taille correspond à l’ampleur relative de contagion. En cliquant sur l’un d’entre eux, on obtient les informations relatives à la région.
 
-Accès au site de l'université Johns Hopkins : https://systems.jhu.edu/
-
-Accès aux données brutes sur leur espace github : https://github.com/CSSEGISandData/COVID-19
+* Accès au site de l'université Johns Hopkins : https://systems.jhu.edu/
+* An interactive dashboard mapping the COVID-19 pandemic in real-time : https://systems.jhu.edu/research/public-health/ncov/
+* Accès aux données brutes sur leur espace github : https://github.com/CSSEGISandData/COVID-19
 
 
 ## Objectif
