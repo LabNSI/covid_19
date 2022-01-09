@@ -22,7 +22,7 @@ def download_file(url, file_name):
         # https://docs.python.org/3/library/functions.html#open
         with open(___, '___') as output:
             # write in output the file read
-            # use write an read functions
+            # use write and read functions
             output.___(file.___())
         # OK : return true
         return ___
